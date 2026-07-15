@@ -272,3 +272,59 @@ body {
     overflow-x: hidden;
     width: 100%;
 }
+
+/* Skills Infinite Marquee */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+.skills-marquee-container {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: var(--bento-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 1.5rem 2rem;
+    backdrop-filter: blur(var(--glass-blur));
+}
+
+.skills-marquee-track {
+    display: flex;
+    gap: 1rem;
+    animation: marquee 35s linear infinite;
+}
+
+.skills-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+.skills-pill {
+    background: var(--neon-pink);
+    color: white !important;
+    font-weight: 700;
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 10px rgba(255, 45, 149, 0.15);
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+/* Hide scrollbar utility for Chrome, Safari, Opera, IE, Edge and Firefox */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

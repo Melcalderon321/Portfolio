@@ -1,9 +1,10 @@
 'use client'
 
+import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useI18n } from '@/lib/useI18n'
-import Image from 'next/image'
 import Link from 'next/link'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const uxProjects = [
     {
@@ -22,25 +23,40 @@ const uxProjects = [
     }
 ]
 
-const webProjects = [
-    {
-        id: 'tehuentec',
-        title: 'Tehuentec Agency',
-        desc: 'Diseñadora Web y encargada de Innovación en Tehuentec. Estratega digital con experiencia en el diseño de más de 15 proyectos para mercados de Miami, Argentina, Colombia y Alemania. Mi especialidad es la creación de webs para campañas y ecommerce que combinan estética y funcionalidad. Como líder de modernización, estoy a cargo de la investigación de nuevas tecnologías y la optimización de procesos con IA, elevando el estándar de eficiencia en cada entrega de la agencia.',
-        tags: ['Web Design', 'Innovation Lead', 'IA Optimization'],
-        image: ''
-    }
+const galleryImages = [
+    '/assets/web-projects/web1.png',
+    '/assets/web-projects/web2.png',
+    '/assets/web-projects/web3.png',
+    '/assets/web-projects/web4.png',
+    '/assets/web-projects/web8.png',
+    '/assets/web-projects/web5.png',
+    '/assets/web-projects/web6.png',
+    '/assets/web-projects/web7.jpg'
 ]
 
 export default function CategorizedProjects() {
     const { t } = useI18n()
+    const scrollRef = useRef<HTMLDivElement>(null)
+
+    // Handle horizontal carousel scroll
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollRef.current) {
+            const { scrollLeft, clientWidth } = scrollRef.current
+            const scrollAmount = clientWidth * 0.75
+            scrollRef.current.scrollTo({
+                left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+                behavior: 'smooth'
+            })
+        }
+    }
 
     return (
         <section id="proyectos" className="container" style={{ paddingBottom: '80px', paddingTop: '80px' }}>
-            <div style={{ marginBottom: '60px' }}>
+            {/* 1. Productos Digitales (Casos de Estudio) */}
+            <div style={{ marginBottom: '80px' }}>
                 <div className="section-tag">{t.projects.ux_projects_tag}</div>
                 <h2
-                    style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '3rem' }}
+                    style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', marginBottom: '3rem', fontWeight: 800 }}
                     dangerouslySetInnerHTML={{ __html: t.projects.ux_projects_title }}
                 />
 
@@ -69,8 +85,8 @@ export default function CategorizedProjects() {
                                     </div>
                                 </div>
                                 <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                                    <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', marginBottom: '0.5rem' }}>{project.title}</h3>
-                                    <p style={{ opacity: 0.7, fontSize: '1.1rem' }}>{project.desc}</p>
+                                    <h3 style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.4rem)', marginBottom: '0.5rem', fontWeight: 750 }}>{project.title}</h3>
+                                    <p style={{ opacity: 0.8, fontSize: 'clamp(0.9rem, 1.1vw, 1rem)', lineHeight: '1.6' }}>{project.desc}</p>
                                     <span className="neon-text" style={{ marginTop: '1.5rem', fontWeight: 800, textDecoration: 'none', fontSize: '0.9rem' }}>{t.projects.view_case} →</span>
                                 </div>
                             </motion.div>
@@ -79,19 +95,112 @@ export default function CategorizedProjects() {
                 </div>
             </div>
 
-            <div>
-                <div className="section-tag">{t.projects.web_projects_tag}</div>
-                <h2
-                    style={{ fontSize: 'clamp(2rem, 6vw, 3rem)', marginBottom: '3rem' }}
-                    dangerouslySetInnerHTML={{ __html: t.projects.web_projects_title }}
-                />
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '1.25rem' }}>
-                    {webProjects.map(project => (
-                        <div key={project.id} className="bento-item" style={{ padding: '2rem' }}>
-                            <div style={{ fontSize: '0.8rem', color: 'var(--neon-pink)', fontWeight: 700, marginBottom: '0.5rem' }}>{project.tags[0]}</div>
-                            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{project.title}</h3>
-                            <p style={{ opacity: 0.6, fontSize: '1.1rem', lineHeight: '1.6' }}>{project.desc}</p>
-                        </div>
+            {/* 2. Proyectos Web (Carrusel Atractivo con border-radius de 15px) */}
+            <div style={{ position: 'relative' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+                    <div>
+                        <div className="section-tag">{t.projects.web_projects_tag}</div>
+                        <h2
+                            style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', margin: 0, fontWeight: 800 }}
+                            dangerouslySetInnerHTML={{ __html: t.projects.web_projects_title }}
+                        />
+                    </div>
+                    {/* Navigation Buttons */}
+                    <div style={{ display: 'flex', gap: '0.75rem' }}>
+                        <button 
+                            onClick={() => scroll('left')}
+                            className="glass"
+                            style={{ 
+                                width: '48px', 
+                                height: '48px', 
+                                borderRadius: '50%', 
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                justifyContent: 'center', 
+                                cursor: 'pointer', 
+                                color: 'white', 
+                                border: '1px solid var(--glass-border)',
+                                background: 'rgba(255,255,255,0.02)',
+                                transition: 'all 0.2s',
+                                outline: 'none'
+                            }}
+                        >
+                            <ChevronLeft size={20} />
+                        </button>
+                        <button 
+                            onClick={() => scroll('right')}
+                            className="glass"
+                            style={{ 
+                                width: '48px', 
+                                height: '48px', 
+                                borderRadius: '50%', 
+                                display: 'flex', 
+                                alignItems: 'center', 
+                                justifyContent: 'center', 
+                                cursor: 'pointer', 
+                                color: 'white', 
+                                border: '1px solid var(--glass-border)',
+                                background: 'rgba(255,255,255,0.02)',
+                                transition: 'all 0.2s',
+                                outline: 'none'
+                            }}
+                        >
+                            <ChevronRight size={20} />
+                        </button>
+                    </div>
+                </div>
+                
+                {/* Carousel Track container */}
+                <div 
+                    ref={scrollRef}
+                    className="hide-scrollbar"
+                    style={{ 
+                        display: 'flex', 
+                        gap: '1.5rem', 
+                        overflowX: 'auto', 
+                        scrollSnapType: 'x mandatory',
+                        scrollBehavior: 'smooth',
+                        paddingBottom: '20px',
+                        paddingTop: '5px'
+                    }}
+                >
+                    {galleryImages.map((imgSrc, idx) => (
+                        <motion.div
+                            key={idx}
+                            whileHover="hover"
+                            className="glass"
+                            style={{
+                                flex: '0 0 clamp(290px, 45vw, 550px)',
+                                scrollSnapAlign: 'start',
+                                borderRadius: '15px',
+                                overflow: 'hidden',
+                                border: '1px solid var(--glass-border)',
+                                background: 'rgba(255, 255, 255, 0.015)',
+                                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.25)',
+                                cursor: 'pointer',
+                                aspectRatio: '16/10'
+                            }}
+                        >
+                            <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
+                                <motion.img
+                                    variants={{
+                                        hover: { scale: 1.04 }
+                                    }}
+                                    transition={{ duration: 0.4 }}
+                                    src={imgSrc}
+                                    alt={`Web Project ${idx + 1}`}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        display: 'block'
+                                    }}
+                                    onError={(e) => {
+                                        e.currentTarget.style.display = 'none'
+                                    }}
+                                />
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

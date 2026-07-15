@@ -41,23 +41,11 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="hide-on-mobile" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                    <Link href="/#sobre-mi">{t.nav.profile}</Link>
                     <Link href="/#proyectos">{t.nav.projects}</Link>
+                    <Link href="/#product-optimization">{t.nav.optimization}</Link>
                     <Link href="/#experiencia">{t.nav.experience}</Link>
                     <Link href="/#workshops">{t.nav.workshops}</Link>
-                    <button
-                        onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-                        className="glass"
-                        style={{
-                            background: 'none',
-                            color: 'white',
-                            border: '1px solid var(--glass-border)',
-                            padding: '4px 8px',
-                            cursor: 'pointer',
-                            fontSize: '0.8rem'
-                        }}
-                    >
-                        {lang.toUpperCase()}
-                    </button>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -107,27 +95,11 @@ export default function Navbar() {
                             textAlign: 'center'
                         }}
                     >
+                        <Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)} style={{ fontSize: '1.2rem', color: 'white', textDecoration: 'none' }}>{t.nav.profile}</Link>
                         <Link href="/#proyectos" onClick={() => setIsMenuOpen(false)} style={{ fontSize: '1.2rem', color: 'white', textDecoration: 'none' }}>{t.nav.projects}</Link>
+                        <Link href="/#product-optimization" onClick={() => setIsMenuOpen(false)} style={{ fontSize: '1.2rem', color: 'white', textDecoration: 'none' }}>{t.nav.optimization}</Link>
                         <Link href="/#experiencia" onClick={() => setIsMenuOpen(false)} style={{ fontSize: '1.2rem', color: 'white', textDecoration: 'none' }}>{t.nav.experience}</Link>
                         <Link href="/#workshops" onClick={() => setIsMenuOpen(false)} style={{ fontSize: '1.2rem', color: 'white', textDecoration: 'none' }}>{t.nav.workshops}</Link>
-                        <button
-                            onClick={() => {
-                                setLang(lang === 'es' ? 'en' : 'es')
-                                setIsMenuOpen(false)
-                            }}
-                            className="glass"
-                            style={{
-                                background: 'transparent',
-                                color: 'white',
-                                border: '1px solid var(--glass-border)',
-                                padding: '10px',
-                                cursor: 'pointer',
-                                fontSize: '1rem',
-                                width: '100%'
-                            }}
-                        >
-                            Change Language ({lang.toUpperCase()})
-                        </button>
                     </motion.div>
                 )}
             </AnimatePresence>

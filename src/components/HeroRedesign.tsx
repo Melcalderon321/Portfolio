@@ -48,9 +48,9 @@ export default function HeroRedesign() {
                 </div>
                 <h1 style={{ marginBottom: '2rem', lineHeight: '1.2' }}>
                     {t.hero.title_line1} <br />
-                    {t.hero.title_line2} <span className="neon-text">{t.hero.title_accent}</span>
+                    {t.hero.title_line2} <span className="neon-text" style={{ paddingRight: '0.08em' }}>{t.hero.title_accent}</span>
                 </h1>
-                <p style={{ fontSize: 'clamp(1.1rem, 3vw, 1.5rem)', opacity: 0.7, maxWidth: '700px', margin: '0 auto 3rem', lineHeight: '1.6' }}>
+                <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.15rem)', opacity: 0.85, maxWidth: '700px', margin: '0 auto 3rem', lineHeight: '1.7' }}>
                     {t.hero.subtitle}
                 </p>
 
@@ -78,17 +78,6 @@ export default function HeroRedesign() {
                 </div>
             </motion.div>
 
-            {/* Hero Stats */}
-            <div className="skills-carousel" style={{
-                marginTop: 'clamp(3rem, 10vw, 80px)',
-                width: '100%',
-                opacity: 0.5,
-                borderTop: '1px solid var(--glass-border)',
-                paddingTop: '2rem',
-                justifyContent: 'center'
-            }}>
-                {t.hero.stats.map((stat: string) => <div key={stat}>{stat}</div>)}
-            </div>
         </section>
     )
 }

@@ -45,12 +45,15 @@ export default function CtaBanner() {
                     />
                 </motion.div>
 
-                <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800 }}>
-                    {t.cta_banner.title}
-                </h2>
-                <p style={{ fontSize: '1.2rem', opacity: 1, maxWidth: '600px' }}>
-                    {t.cta_banner.text}
-                </p>
+                <h2 
+                    style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, lineHeight: 1.2 }}
+                    dangerouslySetInnerHTML={{ __html: t.cta_banner.title }}
+                />
+                {t.cta_banner.text && (
+                    <p style={{ fontSize: '1.2rem', opacity: 1, maxWidth: '600px' }}>
+                        {t.cta_banner.text}
+                    </p>
+                )}
                 <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

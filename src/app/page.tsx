@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import HeroRedesign from '@/components/HeroRedesign'
 import BentoProfile from '@/components/BentoProfile'
 import CategorizedProjects from '@/components/CategorizedProjects'
+import ProductOptimization from '@/components/ProductOptimization'
 import Experience from '@/components/Experience'
 import Workshops from '@/components/Workshops'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp'
@@ -21,6 +22,7 @@ export default function HomePage() {
                 <HeroRedesign />
                 <BentoProfile />
                 <CategorizedProjects />
+                <ProductOptimization />
                 <Experience />
                 <Workshops />
                 <CtaBanner />
@@ -35,7 +37,7 @@ export default function HomePage() {
                         </a>
                     </div>
                     <div style={{ opacity: 0.3 }}>
-                        © 2026 Melanie Calderon — High Performance Design
+                        © 2026 Melanie Calderon
                     </div>
                 </footer>
 
