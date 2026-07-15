@@ -40,18 +40,15 @@ export default function Experience() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                     {t.profile.experience_items.map((item: any, idx: number) => (
                         <div key={idx} className="experience-item" style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
                             paddingBottom: '2rem',
-                            borderBottom: '1px solid var(--glass-border)',
-                            alignItems: 'center'
+                            borderBottom: '1px solid var(--glass-border)'
                         }}>
                             <div>
                                 <h3 style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.3rem)', fontWeight: 750, color: 'white' }}>
                                     {item.company} <span style={{ fontWeight: 400, opacity: 0.8 }}>{item.role}</span>
                                 </h3>
                             </div>
-                            <div style={{ textAlign: 'right', opacity: 0.8, fontSize: 'clamp(0.9rem, 1.2vw, 1rem)', display: 'flex', alignItems: 'center' }}>
+                            <div className="experience-location" style={{ opacity: 0.8, fontSize: 'clamp(0.9rem, 1.2vw, 1rem)' }}>
                                 – {item.location} {renderFlag(item.location)}
                             </div>
                         </div>

@@ -327,4 +327,74 @@ body {
 .hide-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+/* Experience layout responsive alignment */
+.experience-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.experience-location {
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .experience-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.75rem !important;
+    }
+    .experience-location {
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+}
+
+/* Responsive margin for projects screenshots to prevent overlapping text on mobile */
+.project-image-container {
+    max-width: 800px;
+    margin: 1rem auto -8rem auto;
+    padding: 0 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .project-image-container {
+        margin: 1rem auto -2rem auto !important;
+    }
+}
+
+/* Methodology Steps Grid to Carousel on Mobile */
+.steps-grid-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .steps-grid-carousel {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 1.5rem !important;
+        padding-bottom: 20px !important;
+        padding-top: 5px !important;
+        width: 100% !important;
+        scrollbar-width: none !important; /* Firefox */
+        -ms-overflow-style: none !important;  /* IE/Edge */
+    }
+    .steps-grid-carousel::-webkit-scrollbar {
+        display: none !important;
+    }
+    .steps-grid-carousel .bento-item {
+        flex: 0 0 85% !important;
+        scroll-snap-align: start !important;
+    }
 }

@@ -69,7 +69,7 @@ export default function CibaCaseStudy() {
 
                 {/* 2. Centered Image Block (800px) - Pulls content below up to eat empty bottom space */}
                 {data.image && (
-                    <div style={{ maxWidth: '800px', margin: '1rem auto -8rem auto', padding: '0 1.5rem', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <div className="project-image-container">
                         <img
                             src={data.image}
                             alt={data.title}

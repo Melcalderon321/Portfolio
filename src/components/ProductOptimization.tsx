@@ -44,7 +44,7 @@ export default function ProductOptimization() {
                     {data.methodology.subtitle}
                 </p>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '2rem' }}>
+                <div className="steps-grid-carousel">
                     {data.methodology.steps.map((step: any, idx: number) => (
                         <motion.div
                             key={idx}
