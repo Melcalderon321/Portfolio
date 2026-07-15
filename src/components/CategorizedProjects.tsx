@@ -31,7 +31,13 @@ const galleryImages = [
     '/assets/web-projects/web8.png',
     '/assets/web-projects/web5.png',
     '/assets/web-projects/web6.png',
-    '/assets/web-projects/web7.jpg'
+    '/assets/web-projects/web7.jpg',
+    '/assets/web-projects/web9.png',
+    '/assets/web-projects/web10.png',
+    '/assets/web-projects/web11.png',
+    '/assets/web-projects/web12.png',
+    '/assets/web-projects/web13.png',
+    '/assets/web-projects/web14.png'
 ]
 
 export default function CategorizedProjects() {
