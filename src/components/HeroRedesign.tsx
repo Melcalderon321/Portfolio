@@ -44,7 +44,14 @@ export default function HeroRedesign() {
                 transition={{ duration: 1 }}
             >
                 <div className="section-tag" style={{ color: 'white', background: 'var(--primary)', marginBottom: '2rem' }}>
-                    {t.hero.tag}
+                    {t.hero.tag.includes('✸') ? (
+                        <>
+                            <span className="hide-on-mobile">{t.hero.tag.split('✸')[0]} ✸ </span>
+                            <span>{t.hero.tag.split('✸')[1]}</span>
+                        </>
+                    ) : (
+                        t.hero.tag
+                    )}
                 </div>
                 <h1 style={{ marginBottom: '2rem', lineHeight: '1.2' }}>
                     {t.hero.title_line1} <br />
