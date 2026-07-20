@@ -245,6 +245,52 @@ export const translations = {
                             text: 'Las recomendaciones estuvieron orientadas a reducir la fricción del proceso de contacto, fortalecer la propuesta de valor y aumentar la tasa de conversión de la campaña mediante decisiones respaldadas por datos de comportamiento real.'
                         }
                     }
+                },
+                {
+                    id: 'qualitystars',
+                    title: 'QualityStars',
+                    subtitle: 'Estrategia SEO B2B y arquitectura de información mediante ingeniería inversa a competidores líderes',
+                    industry: 'Consultoría',
+                    focus: 'Product Strategy · SEO Benchmark · Information Architecture',
+                    image: '/assets/projects/qualitystars.png',
+                    sections: {
+                        context: {
+                            title: 'Overview del Proyecto',
+                            text: 'QualityStars es una plataforma SaaS B2B orientada a la gestión de reputación y captación de reseñas de clientes. En un mercado altamente dominado por competidores consolidados (Birdeye, Podium y Reviews.io), el proyecto consistió en realizar una auditoría de ingeniería inversa a escala sobre más de 18,000 URLs y 99 landing pages clave para identificar vulnerabilidades técnicas, brechas en la arquitectura de información y patrones de captación B2B.'
+                        },
+                        challenge: {
+                            title: 'El Desafío de Negocio & Producto',
+                            text: 'En el modelo B2B SaaS, el costo de adquisición de clientes (CAC) mediante pauta digital es cada vez más elevado. Para competir contra actores con presupuestos millonarios de marketing, QualityStars necesitaba una estrategia de crecimiento orgánico basada en producto (Product-Led Growth).',
+                            bullets: [
+                                'Desentrañar la estructura de contenido de competidores con miles de páginas indexadas.',
+                                'Identificar por qué plataformas como Birdeye dominaban el posicionamiento orgánico a pesar de tener interfaces y estructuras complejas.',
+                                'Diseñar un sistema de navegación y contenido que no solo atraiga visitas, sino que intercepte al usuario en la fase final de decisión de compra (Bottom of the Funnel).'
+                            ]
+                        },
+                        investigation: {
+                            title: 'Investigación e Ingeniería Inversa de Datos',
+                            text: 'Herramienta personalizada en Python 3.13 en Jupyter Notebook para ingerir y procesar masivamente robots.txt, sitemap.xml y datasets JSON de páginas públicas de la competencia.',
+                            bullets: [
+                                'Brecha Masiva de Datos Estructurados (Schema.org): Ausencia casi total (95%+) de marcado estructurado avanzado en competidores.',
+                                'Fallas Críticas en Semántica HTML: Reviews.io (47.6% sin H1) y Podium (35% sin H1).',
+                                'Transferencia de Autoridad: Birdeye (Score 83.3/100, 188.4 enlaces internos/página) vs Podium (Score 64.7/100, 28.5 enlaces internos/página).'
+                            ]
+                        },
+                        solution: {
+                            title: 'Solución de Arquitectura & UX Strategy',
+                            bullets: [
+                                'Arquitectura Hub & Spoke (Silos de 2 niveles: Home -> Hubs -> Spokes).',
+                                'Silos por Industria (Vertical Landings para 6 nichos clave).',
+                                'Landings de Comparación Directa (/compare/ con tablas dinámicas).',
+                                'Lead Magnets Interactivos (Calculadora ROI y Generador de Enlaces Google Reviews).',
+                                'Sistema de Enlazado Interno (Megamenú enriquecido, Footer Matrix global, Módulos recomendantes).'
+                            ]
+                        },
+                        result: {
+                            title: 'Entregables & Impacto Esperado',
+                            text: 'Roadmap priorizado de implementación en 4 fases (8 semanas), matriz de especificaciones técnicas (Robots.txt defensivo, sitemapindex modular, JSON-LD) y Target Score de 95.0 / 100.'
+                        }
+                    }
                 }
             ],
             manifesto: {
@@ -499,6 +545,52 @@ export const translations = {
                         impact: {
                             title: 'Expected Impact',
                             text: 'The recommendations aimed to reduce contact friction, strengthen the value proposition, and increase the campaign conversion rate through decisions backed by real behavior data.'
+                        }
+                    }
+                },
+                {
+                    id: 'qualitystars',
+                    title: 'QualityStars',
+                    subtitle: 'B2B SEO strategy and information architecture through reverse engineering of leading competitors',
+                    industry: 'Consulting',
+                    focus: 'Product Strategy · SEO Benchmark · Information Architecture',
+                    image: '/assets/projects/qualitystars.png',
+                    sections: {
+                        context: {
+                            title: 'Project Overview',
+                            text: 'QualityStars is a B2B SaaS platform focused on reputation management and customer review acquisition. In a market dominated by established players (Birdeye, Podium, Reviews.io), the project involved a reverse-engineering audit across +18,000 URLs and 99 key landing pages to identify technical vulnerabilities and IA gaps.'
+                        },
+                        challenge: {
+                            title: 'Business & Product Challenge',
+                            text: 'In B2B SaaS, paid acquisition CAC is increasingly expensive. QualityStars needed a Product-Led organic growth strategy to intercept high intent buyers.',
+                            bullets: [
+                                'Uncover competitor content structures across thousands of indexed pages.',
+                                'Identify why platforms like Birdeye dominated organic rankings despite complex interfaces.',
+                                'Design a navigation and content system capturing bottom-of-the-funnel buyer intent.'
+                            ]
+                        },
+                        investigation: {
+                            title: 'Data Reverse Engineering',
+                            text: 'Custom Python 3.13 tool in Jupyter Notebooks to ingest and process robots.txt, sitemap.xml, and public page JSON datasets.',
+                            bullets: [
+                                'Structured Data Gap (Schema.org): 95%+ absence of advanced schemas (SoftwareApplication, AggregateRating).',
+                                'HTML Semantic Issues: Reviews.io (47.6% missing H1) and Podium (35% missing H1).',
+                                'Link Authority Transfer: Birdeye (Score 83.3/100, 188.4 internal links/page) vs Podium (Score 64.7/100, 28.5 internal links/page).'
+                            ]
+                        },
+                        solution: {
+                            title: 'Architecture & UX Strategy Solution',
+                            bullets: [
+                                'Hub & Spoke Architecture (2-level silos: Home -> Hubs -> Spokes).',
+                                'Industry Silos (Vertical landings for 6 core niches).',
+                                'Direct Comparison Landings (/compare/ with dynamic tables).',
+                                'Interactive Lead Magnets (Review ROI Calculator & Google Review Link Generator).',
+                                'Internal Linking System (Rich megamenu, global footer matrix, recommendation modules).'
+                            ]
+                        },
+                        result: {
+                            title: 'Deliverables & Expected Impact',
+                            text: 'Prioritized 4-phase implementation roadmap (8 weeks), technical spec matrix (defensive robots.txt, modular sitemaps, JSON-LD), and Target Score of 95.0 / 100.'
                         }
                     }
                 }
